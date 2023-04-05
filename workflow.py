@@ -18,13 +18,12 @@ def getnext(retjson, ckkey):
 def getkeys(retjson):
   return list(retjson)
 
-def fixid(text):
-  return 0
-
 if barfi_result:
   st.write(barfi_result)
+  #to fetch step output, bug happens here !!
   arr = barfi_result['Noop-1']['block'].get_interface(name='Output')
   st.write(arr)
-  #toshow = "{0}{1}\n{2}\n{3}".format(arr[0],getnext(barfi_result, '消息监听器-1'),arr[1],arr[2])
   st.write(getkeys(barfi_result))
+  #modifiy the output yaml with step trasition
+  #toshow = "{0}{1}\n{2}\n{3}".format(arr[0],getnext(barfi_result, 'Event Listener-1'),arr[1],arr[2])
   #st.code( toshow, language='yaml')
